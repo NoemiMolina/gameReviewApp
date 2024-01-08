@@ -1,5 +1,5 @@
-import { hash } from 'bcrypt';
-import { User } from '../models';
+const bcrypt = require('bcrypt');
+const { User } = require('../models');
 
 exports.registerUser = async (req, res) => {
   const { username, email, password } = req.body;
@@ -18,7 +18,6 @@ exports.registerUser = async (req, res) => {
       password: hashedPassword,
     });
 
-    // Rediriger avec le nom d'utilisateur
     res.json({ username: newUser.username });
   } catch (error) {
     console.error('Error:', error);
