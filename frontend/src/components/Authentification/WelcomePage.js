@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import styles from './RegisterForm.module.css';
 
 const WelcomePage = () => {
     const { username } = useParams();
@@ -11,10 +12,10 @@ const WelcomePage = () => {
     };
 
     return (
-        <div>
-            <h2>Bienvenue, {username} !</h2>
+        <div className={styles.container}>
+            <h2 className={styles.title}>Bienvenue, {username} !</h2>
             <div>Qu'est-ce que Game Review App ?</div>
-            <p>
+            <p className={styles.loginContainer}>
                 C'est un site dans lequel tu pourras commenter et noter des jeux vidéos. <br />
                 Étant donné que le site est bien fait, les jeux sont rangés par genres. <br />
                 Tu pourras également à tout moment modifier tes coordonnées !

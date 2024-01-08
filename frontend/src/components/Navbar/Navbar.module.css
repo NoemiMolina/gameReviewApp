@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    flex-direction: row;  
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    height: 100px;  
+    width: 100%;  
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.navLink {
+    color: navy;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.navLink:hover {
+    color: navy;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

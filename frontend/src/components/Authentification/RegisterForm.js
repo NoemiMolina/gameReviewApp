@@ -17,8 +17,9 @@ const RegisterForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("oui bouton cliqué");
-
-    fetch('http://localhost:3001/register', {  
+  
+    fetch('http://localhost:3001/register', {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },

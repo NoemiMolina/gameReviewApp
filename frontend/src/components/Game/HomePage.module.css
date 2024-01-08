@@ -1,0 +1,33 @@
+.headerStyle {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.homePageTitle {
+    font-size: 23px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 20px;
+    color: navy;
+}
+
+.imgsContainer {
+    display : flex;
+    justify-content: space-between;
+
+}
+
+.imgs {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.imgs:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
