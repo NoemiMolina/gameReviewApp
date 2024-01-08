@@ -1,0 +1,65 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+.title {
+    font-size: 2em;
+    font-weight: bold;
+    color: navy;
+}
+
+.outerContainer {
+    border: 5px solid green;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.loginContainer {
+    position: relative;
+    border: 5px solid purple;
+    border-radius: 15px;
+    box-sizing: border-box;
+    width: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.loginContainer h2 {
+    color: navy;
+}
+
+.inputContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.innerContainer {
+    position: relative;
+    border: 5px solid navy;
+    width: 250px;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    margin-top: 10px;
+}
