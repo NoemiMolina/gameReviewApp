@@ -11,8 +11,21 @@ import starfield from './imgs2023Popular/starfield.jpg';
 import zelda from './imgs2023Popular/zelda.jpg';
 import bgIII from './imgs2023Popular/bgIII.jpg';
 import marioWonder from './imgs2023Popular/marioWonder.jpg';
+import { useEffect, useState } from 'react';
 
 const HomePage = () => {
+
+    const [games, setGames] = React.useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:3000/games')
+            .then((response) => response.json())
+            .then((data) => setGames(data))
+            .catch(error => console.error(error, 'erreur de connexion à la db'))
+    
+    }, []);
+
+
     return (
         <div className={styles.headerStyle}>
             <NavBar />
@@ -28,6 +41,19 @@ const HomePage = () => {
                 <img src={zelda} alt="zelda" className={styles.imgs} />
                 <img src={bgIII} alt="bgIII" className={styles.imgs} />
                 <img src={marioWonder} alt="marioWonder" className={styles.imgs} />
+            </div>
+
+            <div>
+                <h2>Test récupération :</h2>
+                {games.map((game => (
+                    <div key={game.gameID}>
+                        <h3>{game.gameTitle}</h3>
+                        <p>{game.gameType}</p>
+                        {/* <p>{game.rating}</p>
+                        <p>{game.review}</p> */}
+                    </div>
+                
+                )))}
             </div>
 
 

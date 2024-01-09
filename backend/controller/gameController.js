@@ -3,8 +3,38 @@ const { Game } = require('../models');
 
 exports.getAllGames = async (req, res) => {
   try {
-    const games = await Game.findAll();
+    const games = await Game.findAll({
+      include: [
+        {
+          model: Comment,
+          attributes: ['commentContent', 'note', 'commentDate'],
+        },
+      ],
+    });
     res.json(games);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
+
+exports.getCommentsForGame = async (req, res) => {
+  const gameId = req.params.id;
+  try {
+    const gameWithComments = await Game.findByPk(gameId, {
+      include: [
+        {
+          model: Comment,
+          attributes: ['commentContent', 'note', 'commentDate'],
+        },
+      ],
+    });
+
+    if (!gameWithComments) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    res.json(gameWithComments.Comments);
   } catch (error) {
     console.error('Error:', error);
     res.status(500).json({ error: 'Internal Server Error' });
